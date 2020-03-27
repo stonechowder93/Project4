@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap');
+/*
+font-family: 'Spicy Rice' , cursive 
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(black,red);
+}
+
+.Paige-Title {
+    color: black;
+    font-family: 'Spicy Rice', serif;
+    font-family: normal;
+    text-align: center;
+    font-size: 6em;
+    }
+    
+    .Game-Info-Container {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .Game-Info {
+        color: black;
+        font-size: 4em;
+        font-family: 'Spicy Rice', serif;
+
+    }
+    .Game-Container{
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 10px;
+        margin: 50px;
+        justify-content: center;
+    }
+
+    .card {
+        position: relative;
+        background-color: yellow;
+        height: 175px;
+        width: 125px;
+    }
+
+    .Card-Face {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        border-width: 1px;
+        border-style: solid;
+        transition: transform 500ms ease-in-out;
+    }
+
+    .Card:Hover .Card-Back {
+        transform: rotateY(-180deg);
+    }
+
+    
+    .Card:Hover.Card-Front {
+        transform: rotateY(0);
+    }
+
+    .Overlay-Text {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        color: black;
+        font-family: 'Spicy Rice' , cursive;
+    }
+
+    .Overlay-Text-Visible {
+        display: flex;
+        animation: overlay-grow 500ms forwards;
+    }
+    
+    @keyframes overlay-grow {
+        from {
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 0;
+        }
+    }   to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 10em;
+    }
+     
+    
+    
+    .Card-Back {
+        background-color: rgb(238, 231, 231);
+        border-color: lightyellow;
+    }
+    
+    .Card-Front {
+        background-color: lightyellow;
+        border-color: black;
+        transform: rotateY(180deg);
+    }
+
+    .Card-Value {
+        transition: transform 100ms ease-in-out;
+        transform: scale(.9); 
+    }
+    
+    .Card-Front:hover .Card-Value {
+        transform: scale(1);
+    }
+
+    .Doom {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+        transition: transform 100ms ease-in-out;
+    }
+
+
+    
